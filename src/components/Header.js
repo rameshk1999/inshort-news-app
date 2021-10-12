@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
+    height: 72,
+    left: "50%",
   },
 }));
 
@@ -31,7 +33,7 @@ export default function DenseAppBar({ setCategory }) {
 
           <img
             className={classes.logoTitle}
-            src="https://www.inshorts.com/dist/images/home_page/logo.png"
+            src="https://assets.inshorts.com/website_assets/images/logo_inshorts.png"
             alt="inshorts"
           />
         </Toolbar>
