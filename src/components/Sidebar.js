@@ -37,7 +37,7 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
     () =>
       createTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          type: "light",
         },
       }),
     [prefersDarkMode]

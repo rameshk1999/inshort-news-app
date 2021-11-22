@@ -3,24 +3,27 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import NewsContent from "./components/NewsContent";
+import Dotenv from "dotenv";
 
 const App = () => {
+  // Dotenv.config();
   const [category, setCategory] = useState("general");
   const [newsResult, setNewsResult] = useState();
   const [totalResults, setTotalResults] = useState();
-  const apiKey = "73a6e605014a449b93fc606c1ab38f08";
+  const apiKey = process.env.REACT_APP_API_KEY;
+  console.log("apikey", process.env);
   const newsApi = async () => {
     try {
       const news = await axios.get(
         `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}&category=${category}`
       );
-      console.log("news", news);
-      console.log("news", news.data.totalResults);
+      //  console.log("news", news);
+      //   console.log("news", news.data.totalResults);
 
       setNewsResult(news.data.articles);
       setTotalResults(news.data.totalResults);
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
     }
   };
 
